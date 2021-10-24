@@ -23,8 +23,6 @@ class HomePage extends StatelessWidget{
      initialData: [],
      builder: (BuildContext context ,AsyncSnapshot<List<dynamic>> snapshot){
 
-       print(snapshot.data);
-
        return ListView(
          children: _listaItems(snapshot.data!,context),
        );
@@ -45,8 +43,6 @@ class HomePage extends StatelessWidget{
         onTap: (){
 
           Navigator.pushNamed(context, opt['ruta']);
-          //final route = MaterialPageRoute(builder: (context) => AlertPage());
-          //Navigator.push(context, route);
 
         },
       );
