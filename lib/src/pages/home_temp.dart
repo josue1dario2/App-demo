@@ -6,11 +6,12 @@ class HomePageTemp extends StatelessWidget{
   final opciones = ['uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez',
   'once','doce','trece','catorce','quince','dieciséis','diecisiete','dieciocho','diecinueve','veinte'];
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Componentes Temp'),
+        title: const Text('Componentes Temp'),
       ),
       body: ListView(
         //children: _crearItems()
