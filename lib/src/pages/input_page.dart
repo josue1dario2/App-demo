@@ -16,6 +16,9 @@ class _InputPageState extends State<InputPage>{
   String _email = "";
   String _password = "";
   String _fecha = "";
+  String _opcionSelecionada = 'Administración';
+  final List<String> _ocupacion = ['Administración','Producción','Transporte','Otro'];
+
   TextEditingController _inputDate = new TextEditingController();
 
   @override
@@ -35,6 +38,8 @@ class _InputPageState extends State<InputPage>{
           _crearPassword(),
           const Divider(),
           _crearFecha(context),
+          const Divider(),
+          _crearDropdown(),
           const Divider(),
           _crearPersona(),
         ],
@@ -148,7 +153,7 @@ class _InputPageState extends State<InputPage>{
         initialDate: DateTime.now(),
         firstDate: DateTime(2021),
         lastDate: DateTime(2025),
-        locale: Locale('es','ES')
+        locale: const Locale('es','ES')
     );
 
     if(picked != null){
@@ -157,5 +162,43 @@ class _InputPageState extends State<InputPage>{
         _inputDate.text = _fecha;
       });
     }
+  }
+
+  List<DropdownMenuItem<String>> getDropdown(){
+
+  List<DropdownMenuItem<String>> lista = [];
+  
+  _ocupacion.forEach((ocupacion) {
+
+    lista.add(DropdownMenuItem(
+      child: Text(ocupacion),
+      value: ocupacion,
+    ));
+
+  });
+
+  return lista;
+}
+
+  Widget _crearDropdown() {
+
+    return Row(
+      children: [
+        const Icon(Icons.select_all),
+        const SizedBox(width: 30.0),
+        Expanded(
+          child: DropdownButton(
+            value: _opcionSelecionada,
+            items: getDropdown(),
+            onChanged: (opt){
+             setState(() {
+               _opcionSelecionada = opt.toString();
+             });
+            },
+    ),
+        ),
+      ],
+    );
+
   }
 }
