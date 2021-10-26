@@ -6,6 +6,7 @@ import 'package:proyect_1/src/pages/avatar_page.dart';
 import 'package:proyect_1/src/pages/card_page.dart';
 import 'package:proyect_1/src/pages/home_page.dart';
 import 'package:proyect_1/src/pages/input_page.dart';
+import 'package:proyect_1/src/pages/listview_page.dart';
 import 'package:proyect_1/src/pages/slider_page.dart';
 
 
@@ -19,6 +20,7 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     'animatedContainer': (BuildContext context) => const AnimatedContainerPage(),
     'inputs': (BuildContext context) => const InputPage(),
     'sliders': (BuildContext context) => const SliderPage(),
+    'list': (BuildContext context) => const ListaPage(),
   };
 
 }
