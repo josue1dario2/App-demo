@@ -148,6 +148,7 @@ class _InputPageState extends State<InputPage>{
         initialDate: DateTime.now(),
         firstDate: DateTime(2021),
         lastDate: DateTime(2025),
+        locale: Locale('es','ES')
     );
 
     if(picked != null){
